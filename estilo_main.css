@@ -18,7 +18,7 @@ h1{
     font-weight: 700;
 }
 h2{
-    font-size: clamp(1rem, 3.5vw, 3rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-family: "Edu TAS Beginner", serif;
     font-weight: 600;
 }
