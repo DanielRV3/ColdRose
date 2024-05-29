@@ -12,32 +12,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="estilo_main.css" type="text/css">
-    <script src="adaptacion.js"></script>
+    <script src="responsividad.js"></script>
     <title>Cold Rose</title>
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="10" onload="navegador()">
+<body onload="navegador()">
 
+<!--Navegador para celular-->
 <div class="topnav" id="nav-cel">
-    <div class="mr-auto" style="object-fit: contain"><img src="media/logo.png" alt="logo" style="height: 50px"></div>
+    <div class="mr-auto d-flex align-items-center" style="object-fit: contain"><img src="media/logo.png" alt="logo" style="height: 55px"> <h2 class="text-light">Cold Rose</h2></div>
     <div id="myLinks">
         <a href="#info">Informes</a>
         <a href="#oferta-musical">Oferta Musical</a>
         <a href="#contactos">Contactos</a>
         <a href="#FAQ">Preguntas Frecuentes</a>
         <a href="#encuesta">Encuesta</a>
-        <a  href="#acerca-de">Acerca de Cold Rose</a>
+        <a href="#acerca-de">Acerca de Cold Rose</a>
     </div>
     <a href="javascript:void(0);" class="icon" onclick="desplegar()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
 
+<!--Navegador para pc-->
 <nav class="navbar col-md-2 bg-dark navbar-dark" style="height: 100vh; position: fixed; z-index: 5;" id="nav-pc">
-
     <div class="container-fluid h-100">
         <div class="mb-auto">
             <img src="media/logo.png" alt="logo" style="width: 100%">
             <h2 class="text-light" style="text-align: center">Cold Rose</h2>
+            <div class="w-75 d-flex mx-auto p-0" style="height: 4vw;object-fit: contain">
+                <a href="https://wa.me/524443189963?text=Me%20interesaria%20tomar%20clases%20de%20musica!" target="_blank" data-bs-toggle="tooltip" title="WhatsApp"><img src="media/whats_icon.png" alt="whatsapp" class="m-2" style="height: 3vw"></a>
+                <a href="https://www.instagram.com/coldrose_ma" target="_blank" data-bs-toggle="tooltip" title="Instagram"><img src="media/insta_icon.png" alt="instagram" class="m-2" style="height: 3vw"></a>
+                <a href="javascript:void(0);" onclick="copiar();" data-bs-toggle="tooltip" title="Compartir Página"><img src="media/share_icon.png" alt="compartir" class="m-2" style="height: 3vw"></a>
+            </div>
         </div>
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -62,6 +68,7 @@
     </div>
 </nav>
 
+<!--Header-->
 <div class="container-fluid p-0" style="overflow-x: hidden">
     <!--Fondo para pc-->
     <div class="row p-0 m-0" style="position: absolute" id="fondo-pc">
@@ -73,7 +80,7 @@
     <!--Fondo para celular-->
     <div class="row p-0 m-0" id="fondo-cel" style="position: absolute;display: none;"><div class="inicio" id="inicio-cel"></div></div>
 
-    <div class="row" style="height: 100vh">
+    <div class="row" style="height: 100vh;scroll-snap-align: start;">
         <div class="col-md-2 col-aux"></div>
         <header class="col-md-10 d-flex flex-column justify-content-center align-items-center">
             <h1>Cold Rose</h1>
@@ -82,15 +89,13 @@
     </div>
 </div>
 
-<main class="container-fluid p-0" style="overflow-x: hidden">
-
-
+<main class="container-fluid p-0 m-0" style="overflow-x: hidden;scroll-snap-align: start;" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="10">
     <!--Sección de información, precios, horarios, ubicación-->
     <div id="info" class="row pb-4">
-        <div class="col-sm-2 m-0 col-aux"></div>
+        <div class="col-md-2 m-0 col-aux"></div>
 
-        <section class="col-sm-10 m-0">
-            <h2>Informes</h2><hr>
+        <section class="col-md-10 m-0">
+            <h2>Informes</h2>
 
             <div class="row d-flex justify-content-around">
 
@@ -125,11 +130,11 @@
 
     <!--Sección de instrumentos de los que da clases la escuela-->
     <div id="oferta-musical" class="row pb-4">
-        <div class="col-sm-2 m-0 col-aux"></div>
-        <section class="col-sm-10 m-0">
-            <h2>Oferta Musical</h2><hr>
+        <div class="col-md-2 m-0 col-aux"></div>
+        <section class="col-md-10 m-0">
+            <h2>Oferta Musical</h2>
 
-            <div id="oferta" class="carousel slide p-2" data-bs-ride="carousel">
+            <div id="oferta" class="carousel slide p-2 mx-auto" data-bs-ride="carousel" style="width: clamp(83%,120vh,100%)">
 
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#oferta" data-bs-slide-to="0" class="active"></button>
@@ -189,35 +194,36 @@
 
     <!--Contactos-->
     <div id="contactos" class="row pb-4">
-        <div class="col-sm-2 m-0 col-aux"></div>
-        <section class="col-sm-10 m-0">
-            <h2>Contactos</h2> <hr>
-            <div class="row d-flex justify-content-around">
-
-                <div class="contacto card col-lg-3 m-2">
-                    <h3 class="card-title mb-4">Whatsapp</h3>
-                    <img class="card-img-top mb-5" src="media/whats.png" alt="whatsapp">
-                    <div class="card-body">
-                        <a href="https://wa.me/524443189963?text=Me%20interesaria%20tomar%20clases%20de%20musica!" class="btn btn-success" target="_blank">Mensaje</a>
-                    </div>
+        <div class="col-md-2 m-0 col-aux"></div>
+        <section class="col-md-10 m-0">
+            <h2>Contactos</h2>
+            <div class="w-100 d-flex flex-column m-0 p-2">
+                <!--Whatsapp-->
+                <div class="mx-auto my-3" style="width: clamp(450px,50vw,75%)">
+                    <a href="https://wa.me/524443189963?text=Me%20interesaria%20tomar%20clases%20de%20musica!" class="btn btn-success w-100 d-flex" style="height: 150px;" target="_blank">
+                        <img class="card-img-top mb-5" src="media/whats.png" alt="whatsapp" style="height: 100%;object-fit: contain;width: fit-content">
+                        <h3 class="flex-grow-1" style="align-self: center">¡Escríbenos por Whatsapp!</h3>
+                    </a>
                 </div>
 
-                <div class="contacto card col-lg-3 m-2">
-                    <h3 class="card-title mb-2">Instagram</h3>
-                    <img class="card-img-top p-4" src="media/insta.png" alt="instagram" style="object-fit: contain">
-                    <div class="card-body">
-                        <a href="https://www.instagram.com/coldrose_ma" class="btn btn-primary" target="_blank">¡Síguenos!</a>
-                    </div>
+                <!--Insta-->
+                <div class="mx-auto my-3" style="width: clamp(450px,50vw,75%)">
+                    <a href="https://www.instagram.com/coldrose_ma" class="btn w-100 d-flex" style="height: 150px;background-color: #f6907e" target="_blank">
+                        <img class="card-img-top mb-5" src="media/insta.png" alt="whatsapp" style="height: 100%;object-fit: contain;width: fit-content">
+                        <h3 class="flex-grow-1 text-light" style="align-self: center">¡Sigue nuestro Instagram!</h3>
+                    </a>
                 </div>
             </div>
+
+
         </section>
     </div>
 
     <!--Preguntas frecuentes-->
     <div id="FAQ" class="row pb-4">
-        <div class="col-sm-2 m-0 col-aux"></div>
-        <section class="col-sm-10 m-0">
-            <h2>Preguntas Frecuentes</h2> <hr>
+        <div class="col-md-2 m-0 col-aux"></div>
+        <section class="col-md-10 m-0">
+            <h2>Preguntas Frecuentes</h2>
             <div class="preguntas p-2 my-2">
                 <h3 class="display-6">¿Necesito saber leer partituras para aprender a tocar un instrumento?</h3>
                 <h5>No es necesario, en Cold Rose enseñamos teoría músical desde cero para que puedas aprender a tocar cualquier instrumento</h5>
@@ -230,70 +236,78 @@
                 <h3 class="display-6">¿Cuánto tiempo me llevará aprender a tocar un instrumento?</h3>
                 <h5>Puede ser cuestión de semanas o hasta meses dependiendo del tiempo que dediques, con esfuerzo todo es posible</h5>
             </div>
+            <div class="preguntas p-2 my-2">
+                <h3 class="display-6">¿Cuánto tiempo debo dedicar a practicar?</h3>
+                <h5>Tanto tiempo como tu consideres necesario, recuerda que lo importante es disfrutar de aprender en el proceso</h5>
+            </div>
+            <div class="preguntas p-2 my-2">
+                <h3 class="display-6">¿Puedo aprender a cantar incluso si no tengo talento natural?</h3>
+                <h5>¡Claro! Todo es cuestión de práctica y con las clases de Cold Rose verás que aunque parezca complicado es más sencillo de lo que parece</h5>
+            </div>
         </section>
     </div>
     <!--Cuestionario sobre cliente potencial-->
     <div id="encuesta" class="row pb-4">
-        <div class="col-sm-2 m-0 col-aux"></div>
+        <div class="col-md-2 m-0 col-aux"></div>
 
-        <section class="col-sm-10 m-0">
-            <h2>Encuesta</h2><hr>
+        <section class="col-md-10 m-0">
+            <h2>Encuesta</h2>
             <h3>¡Ayúdanos contestando esta pequeña encuesta!</h3>
             <form class="gform" method="post" action="https://script.google.com/macros/s/AKfycbyzaFIBKKOJG1_xAzzpzmxMUESwnJt-YmUEARkM8YGdXSPNS2YgXuW3zUvneFpGm2gMPA/exec">
-                <div class="col-10 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
+                <div class="w-100 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
                     <label for="nombre" class="form-label">Nombre:</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre">
                 </div>
 
-                <div class="col-10 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
-                <p>¿Que horario prefieres?</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="h1" name="horario" value="Matutino" checked>
-                    <label class="form-check-label" for="h1">Matutino</label>
+                <div class="w-100 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
+                    <p>¿Que horario prefieres?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="h1" name="horario" value="Matutino" checked>
+                        <label class="form-check-label" for="h1">Matutino</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="h2" name="horario" value="Vespertino" >
+                        <label class="form-check-label" for="h2">Vespertino</label>
+                    </div>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="h2" name="horario" value="Vespertino" >
-                    <label class="form-check-label" for="h2">Vespertino</label>
-                </div>
-                </div>
-                <div class="col-10 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
+                <div class="w-100 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
 
-                <p>¿Qué te gustaría aprender?</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="i1" name="instrumento" value="Guitarra" checked>
-                    <label class="form-check-label" for="i1">Guitarra</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="i2" name="instrumento" value="Bajo" >
-                    <label class="form-check-label" for="i2">Bajo</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="i3" name="instrumento" value="Bateria" >
-                    <label class="form-check-label" for="i3">Batería</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="i4" name="instrumento" value="Piano" >
-                    <label class="form-check-label" for="i4">Piano</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="i5" name="instrumento" value="Canto" >
-                    <label class="form-check-label" for="i5">Canto</label>
-                </div>
-                </div>
-
-                <div class="col-10 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
-                <p>¿Te gustaría una modalidad presencial?</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="si" name="modalidad" value="Presencial" >
-                    <label class="form-check-label" for="si">Sí</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="no" name="modalidad" value="Virtual" >
-                    <label class="form-check-label" for="no">No estoy seguro</label>
-                </div>
+                    <p>¿Qué te gustaría aprender?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="i1" name="instrumento" value="Guitarra" checked>
+                        <label class="form-check-label" for="i1">Guitarra</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="i2" name="instrumento" value="Bajo" >
+                        <label class="form-check-label" for="i2">Bajo</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="i3" name="instrumento" value="Bateria" >
+                        <label class="form-check-label" for="i3">Batería</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="i4" name="instrumento" value="Piano" >
+                        <label class="form-check-label" for="i4">Piano</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="i5" name="instrumento" value="Canto" >
+                        <label class="form-check-label" for="i5">Canto</label>
+                    </div>
                 </div>
 
-                <div class="col-10 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
+                <div class="w-100 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
+                    <p>¿Te gustaría una modalidad presencial?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="si" name="modalidad" value="Presencial" checked>
+                        <label class="form-check-label" for="si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="no" name="modalidad" value="Virtual" >
+                        <label class="form-check-label" for="no">No estoy seguro</label>
+                    </div>
+                </div>
+
+                <div class="w-100 p-2 rounded-4 my-2" style="background-color: rgba(134,136,142,0.51)">
                     <label for="motivacion" class="form-label">¿Qué tan motivado te sientes del 1 al 5 para aprender?</label>
                     <input type="range" class="form-range" id="motivacion" name="motivacion" min="1" max="5">
                 </div>
@@ -308,16 +322,22 @@
 
     <!--Acerca de-->
     <div id="acerca-de" class="row pb-4">
-        <div class="col-sm-2 m-0 col-aux"></div>
-        <section class="col-sm-10 m-0">
-            <h2>Acerca de Cold Rose</h2><hr>
+        <div class="col-md-2 m-0 col-aux"></div>
+        <section class="col-md-10 m-0">
+            <h2>Acerca de Cold Rose</h2>
             <h5>Cold Rose fue creada por Adiel, un jóven mexicano quien desde pequeño ha dedicado su vida a la música y actualmente se encuentra dando clases.</h5>
             <h5>El propósito de Cold Rose es enseñar la belleza de la música a personas de todo el mundo, precisamente por esto se decidió hacer las clases de manera virtual.</h5>
             <h5>Actualmente, Cold Rose da clases a personas de distintos países de Latinoamérica, como la República Dominicana, Colombia y, principalmente, México.</h5>
+            <h6 class="display-6"></h6>
         </section>
     </div>
 </main>
 <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
-
+<script>
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 </body>
 </html>
